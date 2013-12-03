@@ -1,0 +1,16 @@
+development:
+  host: localhost
+  database: rufino_api_development
+  autocreate_indexes: true
+  persist_in_safe_mode: true
+
+test:
+  host: localhost
+  database: rufino_api_test
+  autocreate_indexes: true
+  persist_in_safe_mode: true
+
+# set these environment variables on your prod server
+production:
+  uri: <%= ENV['MONGODB_URL'] %>
+  persist_in_safe_mode: true
