@@ -1,6 +1,10 @@
 
 class RelajoApi < Grape::API
 
+  before do
+    header "Access-Control-Allow-Origin", "*"
+  end
+
   ApiBase.expand self
 
   helpers do

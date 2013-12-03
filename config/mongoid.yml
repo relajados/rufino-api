@@ -2,13 +2,15 @@ development:
   sessions:
     default:
       database: rufino_api_development
-      hosts: localhost
+      hosts:
+        - localhost
 
 test:
   sessions:
     default:
       database: rufino_api_test
-      hosts: localhost
+      hosts:
+        - localhost
 
 # set these environment variables on your prod server
 production:
