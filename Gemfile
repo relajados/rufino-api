@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'bundler'
-#ruby '1.9.3'
+ruby '1.9.3'
 
 
-gem "mongoid"
-gem "bson_ext"
-gem "bcrypt-ruby"
-gem 'goliath'
 gem 'grape'
+gem 'goliath'
+gem "mongoid", github: 'mongoid/mongoid'
+#gem "bson_ext"
+#gem "bcrypt-ruby"
 gem 'em-http-request'
 gem 'yajl-ruby'
 
