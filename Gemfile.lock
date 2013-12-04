@@ -85,6 +85,7 @@ GEM
     http_parser.rb (0.5.3)
     i18n (0.6.5)
     log4r (1.1.10)
+    mime-types (1.19)
     minitest (4.7.5)
     moped (2.0.0.beta4)
       bson (~> 2.0)
@@ -107,6 +108,8 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.0.3)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -141,5 +144,6 @@ DEPENDENCIES
   mongoid!
   rack-test
   rake
+  rest-client
   rspec
   yajl-ruby

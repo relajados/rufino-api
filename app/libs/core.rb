@@ -28,6 +28,10 @@ class RufinoApiImpl
       map "/v1/relajo" do
         run RelajoApi
       end
+
+      map "/v1/work" do
+        run WorkApi
+      end
     end
   end
 

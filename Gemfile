@@ -11,6 +11,7 @@ gem "mongoid", github: 'mongoid/mongoid'
 #gem "bcrypt-ruby"
 gem 'em-http-request'
 gem 'yajl-ruby'
+gem 'rest-client'
 
 group :development, :test do
   gem "factory_girl"
