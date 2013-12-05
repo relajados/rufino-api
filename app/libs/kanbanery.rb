@@ -1,14 +1,15 @@
+require 'rest_client'
+require 'json'
+
 module Kanbanery
   module Helpers
 
-    ACCESS_TOKEN = ENV['KANBANERY_APIKEY']
-
     def call_auth_kanbanery(url)
-      RestClient.get(url, { "X-Kanbanery-ApiToken" => ACCESS_TOKEN })
+      RestClient.get(url, { "X-Kanbanery-ApiToken" => KANBANERY_API_TOKEN })
     end
 
-    def get_projecs
-      projects_url = KANBANERY_BASE_URL + '/projects'
+    def get_projects
+      projects_url = KANBANERY_API_URL + '/projects'
       JSON.parse(call_auth_kanbanery(projects_url))
     end
   end

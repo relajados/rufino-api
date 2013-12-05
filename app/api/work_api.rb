@@ -11,7 +11,7 @@ class WorkApi < Grape::API
   end
 
   get "/kanbanery/projects" do
-    # FIXME
+    Kanbanery.get_projects
   end
 end
 
