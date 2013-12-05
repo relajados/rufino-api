@@ -10,8 +10,18 @@ class WorkApi < Grape::API
   helpers do
   end
 
-  get "/kanbanery/projects" do
-    Kanbanery.get_projects
+  resource :kanbanery do
+
+    get '/projects' do
+      Kanbanery.get_projects
+    end
+
+    get '/tasks' do
+      if params['project_id'].blank?
+        throw :error, message: 'Missing parameter project_id', :status => 401
+      end
+      Kanbanery.get_tasks(params['project_id'])
+    end
   end
 end
 
