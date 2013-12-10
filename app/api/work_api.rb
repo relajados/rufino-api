@@ -12,6 +12,13 @@ class WorkApi < Grape::API
 
   resource :kanbanery do
 
+    get '/login' do
+      if params['user'].blank? or params['password'].blank?
+        throw :error, message: 'Missing parameter user or password', :status => 401
+      end
+      Kanbanery.get_user_info(params[:user], params[:password])
+    end
+
     get '/projects' do
       Kanbanery.get_projects
     end
