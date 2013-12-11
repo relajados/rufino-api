@@ -20,14 +20,17 @@ class WorkApi < Grape::API
     end
 
     get '/projects' do
-      Kanbanery.get_projects
+      if params['token'].blank?
+        throw :error, message: 'Missing token parameter', :status => 401
+      end
+      Kanbanery.get_projects(params[:token])
     end
 
     get '/tasks' do
-      if params['project_id'].blank?
-        throw :error, message: 'Missing parameter project_id', :status => 401
+      if params['project_id'].blank? or params['token'].blank?
+        throw :error, message: 'Missing parameter token or project_id', :status => 401
       end
-      Kanbanery.get_tasks(params['project_id'])
+      Kanbanery.get_tasks(params['project_id'], params['token'])
     end
   end
 end

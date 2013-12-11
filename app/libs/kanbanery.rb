@@ -25,7 +25,7 @@ module Kanbanery
       JSON.parse(call_auth_kanbanery(projects_url, token))
     end
 
-    def get_tasks(project_id)
+    def get_tasks(project_id, token)
       tasks_url = KANBANERY_API_URL + "/projects/#{project_id}/tasks"
       JSON.parse(call_auth_kanbanery(tasks_url, token))
     end
