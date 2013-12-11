@@ -5,9 +5,15 @@ module Kanbanery
   module Helpers
 
     def get_user_info(user, password)
-      user_url = KANBANERY_API_URL + '/user'
-      user = Request.get(user_url, :user => user, :password => password)
-      JSON.parse(user)
+      user_url = KANBANERY_API_URL + 'user'
+
+      result = RestClient::Request.new(
+        method: :get,
+        url: user_url,
+        user: user,
+        password: password
+      ).execute
+      JSON.parse(result.to_s)
     end
 
     def call_auth_kanbanery(url, token)
